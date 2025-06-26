@@ -17,6 +17,7 @@ const HomeScreen = ({ tasks }) => {
                 title={iter.item.title}
                 description={iter.item.description}
                 id={iter.item.id}
+                isComplete={iter.item.isComplete}
             />
             )}
             />
