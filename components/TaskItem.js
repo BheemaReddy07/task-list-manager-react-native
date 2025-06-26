@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View, Platform } from 'react-native'
 import React from 'react'
 import { Button, Card,Chip } from 'react-native-paper'
-import Icon from 'react-native-vector-icons/FontAwesome6'
-const TaskItem = ({ title, date, description, id ,isComplete}) => {
+import Icon from 'react-native-vector-icons/FontAwesome'
+const TaskItem = ({ title, date, description, id ,isComplete,onComplete ,onDelete}) => {
     return (
         <Card style={styles.card}>
             {isComplete && 
             // <Chip icon={"calendar-multiple-check"} style={{margin:3,marginLeft:"auto" }} mode="outlined">Task Done</Chip>
-            <Icon name="check-square" />
+            <Icon size={20} style={styles.icon} name="check-square" />
             }
             <Card.Title title={title} />
             <Card.Content style={styles.padding} title={title} />
@@ -20,8 +20,8 @@ const TaskItem = ({ title, date, description, id ,isComplete}) => {
                     display: "flex",
                     ...styles.padding
                 }}>
-                <Button style={{ marginRight: "auto" }}>Delete</Button>
-                <Button>Done</Button>
+                <Button onPress={()=>onDelete(id)} style={{ marginRight: "auto" }}>Delete</Button>
+                <Button onPress={()=>onComplete(id)}>Done</Button>
             </Card.Actions>
         </Card>
     )
@@ -46,8 +46,10 @@ const styles = StyleSheet.create({
                 shadowRadius: 10,
             }
         })
-
-
-
+    },
+    icon:{
+        marginLeft:'auto',
+        marginVertical:4,
+        marginRight:4
     }
 })

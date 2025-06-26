@@ -1,17 +1,17 @@
 
-import { StyleSheet, View, StatusBar } from 'react-native';
+import { StyleSheet, View, StatusBar, SafeAreaView } from 'react-native';
 import AppManager from './manager/AppManager';
 import { PaperProvider } from 'react-native-paper';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor={"lightblue"} barStyle={'dark-content'} translucent={false} />
       <PaperProvider>
         <AppManager />
       </PaperProvider>
 
-    </View>
+    </SafeAreaView>
   );
 }
 

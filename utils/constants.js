@@ -32,5 +32,12 @@ export const Dummy_Tasks =[
         description:"Learn from gfg 4",
         date: new Date().toLocaleDateString(),
         isComplete:false,
-    }
+    },
+    {
+        id:5,
+        title:"Learn NextJs",
+        description:"Learn from gfg 3",
+        date: new Date().toLocaleDateString(),
+        isComplete:false,
+    },
 ]
