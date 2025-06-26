@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { Card } from 'react-native-paper'
 
-const TaskItem = () => {
+const TaskItem = ({title,date,description,id}) => {
   return (
-    <View>
-      <Text>TaskItem</Text>
-    </View>
+      <Card>
+        <Card.Title title={title} /> 
+      </Card>
   )
 }
 

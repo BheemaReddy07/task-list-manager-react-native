@@ -1,12 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { Button } from 'react-native-paper'
+import TaskItem from '../components/TaskItem'
 
-const HomeScreen = () => {
-  return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
-  )
+const HomeScreen = ({ tasks }) => {
+
+    return (
+        <View>
+            <Text>HomeScreen</Text>
+            <FlatList 
+            data={tasks}
+            keyExtractor={(item,index)=>item.id + index}
+            renderItem={(iter) =>
+            (<TaskItem
+                date={iter.item.date}
+                title={iter.item.title}
+                description={iter.item.description}
+                id={iter.item.id}
+            />
+            )}
+            />
+        </View>
+    )
 }
 
 export default HomeScreen
